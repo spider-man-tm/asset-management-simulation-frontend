@@ -131,7 +131,7 @@
                               v-model="variableDialog.editedItem.volatility"
                               class="align-center"
                               color="brown"
-                              :max="10"
+                              :max="30"
                               :min="0"
                               :step="0.01"
                               :rules="[rules.required]"

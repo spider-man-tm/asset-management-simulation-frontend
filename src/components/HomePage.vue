@@ -29,7 +29,7 @@
                     dark
                     class="mb-2"
                     elevation="5"
-                    v-bind="props"
+                    v-bind="{ ...props, disabled: isLimitReached }"
                   >
                     &nbsp;新規追加&nbsp;
                     <v-icon>
@@ -245,6 +245,10 @@
           </template>
 
         </v-data-table-virtual>
+
+        <ul>
+          <li class="under-anotation">最大5件まで登録可能です</li>
+        </ul>
       </v-row>
 
       <!-- Requests API part -->
@@ -616,6 +620,9 @@ export default {
     formTitle () {
       return this.variableDialog.editedIndex === -1 ? '新規銘柄の追加' : '銘柄情報の編集'
     },
+    isLimitReached () {
+      return this.variableDialog.stocks.length >= 6
+    },
   },
 
   watch: {
@@ -837,6 +844,10 @@ li {
   margin: 0 10px;
 }
 li.annotation {
+  margin-bottom: 1em;
+}
+li.under-anotation {
+  margin-top: 2em;
   margin-bottom: 1em;
 }
 

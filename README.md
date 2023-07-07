@@ -23,14 +23,16 @@
   ├── .env.development.local
   └── .env.staging.local
   ```
-  - 以下のような形で環境変数`VITE_BACKEND_URL`を定義します
+  - 以下のような形で環境変数`VITE_BACKEND_URL`、および`VITE_GTAG_ID`を定義します
   ``` shell
   # .env.development.local
   VITE_BACKEND_URL = http://127.0.0.1:9000
+  VITE_GTAG_ID = G-XXXXXXXXXX
   ```
   ``` shell
   # .env.production.local (ステージング環境でのBACKENDエンドポイント)
   VITE_BACKEND_URL = https://hoge-fuga.run.app
+  VITE_GTAG_ID = G-XXXXXXXXXX
   ```
   - `package.json`を編集します
   ``` json
@@ -186,5 +188,6 @@ el?
 - ビルド環境上で.envファイルを作成できるよう`.github/`以下の各YAMLを修正（内容はコードを参照）
 - GitHubレポジトリで以下のSecret（環境変数）を追加
   - `VITE_BACKEND_URL`
+  - `VITE_GTAG_ID`
 - GitHubレポジトリで Settings → Actions → General を選択し、`Read and write permission`ラジオボタンをチェック、その後、`Allow GitHub Actions to create and approve pull requests`を選択し、保存する
   - これを実施しないと、mainブランチへのマージによる自動デプロイは成功するものの、PRを起点としたpreview環境へのデプロイが失敗してしまう

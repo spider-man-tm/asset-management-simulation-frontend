@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { trackRouter } from "vue-gtag-next";
+import { trackRouter } from 'vue-gtag-next'
 import HomePage from './components/HomePage.vue'
 import PrivacyPolicyPage from './components/PrivacyPolicyPage.vue'
 import NotFoundPage from './components/NotFoundPage.vue'
@@ -29,8 +29,6 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
-
-// Google Analytics Tracking
-trackRouter(router);
+trackRouter(router)
 
 export default router

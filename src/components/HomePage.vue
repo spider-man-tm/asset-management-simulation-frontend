@@ -392,7 +392,7 @@
                       type="number"
                       step="1"
                       v-model="reSubmitYear"
-                      label="積立年数（年）"
+                      label="取り崩し年数（年）"
                       :rules="[rules.required, rules.min_1_number, rules.max_20_number]"
                     ></v-text-field>
                   </v-col>

@@ -11,6 +11,7 @@
 - こちらのプロジェクトは[Vuetify3公式ドキュメント](https://vuetifyjs.com/en/getting-started/installation/)をベースに作成しています。
 - 各グラフの描画にHighChartsを利用しています。
 - Firebase Hosting へデプロイしています。
+- develop branchへのPRがマージされたタイミングでmain branchへのリリースPRが自動で作成されます。
 - GitHub上で main branch へPRがあった際に、GitHub Actionsを利用したfirebase hosting preview環境への自動デプロイが実施されます。
 - mainブランチへpush、あるいはPRがマージされたタイミングでGitHub Actionsを利用した本番環境への自動デプロイが実施されます。
 

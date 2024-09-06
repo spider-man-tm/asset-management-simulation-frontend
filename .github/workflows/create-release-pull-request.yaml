@@ -27,6 +27,6 @@ jobs:
           GIT_PR_RELEASE_LABELS: release
           GIT_PR_RELEASE_TEMPLATE: '.github/pr-release-template.erb'
         run: |
-          install -N git-pr-release -v $GIT_PR_RELEASE_VERSION
+          gem install -N git-pr-release -v $GIT_PR_RELEASE_VERSION
           git remote set-url origin "https://${GITHUB_ACTOR}:${GIT_PR_RELEASE_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git-pr-release --squashed
